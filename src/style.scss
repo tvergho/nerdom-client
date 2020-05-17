@@ -1,3 +1,233 @@
-.active {
-    color: pink;
+@import "~bootstrap/scss/bootstrap";
+
+// Bootstrap override
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Roboto', 'Helvetica', 'Arial'; 
+  background: rgb(250, 252, 252);
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 0px;
+}
+
+button:focus, .btn-link:focus, .btn:focus {
+  outline: 0 !important;
+  box-shadow: none;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px 30px 20px 30px;
+  padding-bottom: 10px; 
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  flex: 1 1 auto; 
+}
+
+.link-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-title {
+  font-weight: 800; 
+  font-size: 32px; 
+  padding-top: 3px; 
+  line-height: 1.2;
+}
+
+.nav-subtitle {
+  color: rgba(0,0,0,0.7);
+}
+
+.nav-link {
+  color: rgba(0,0,0,0.7);
+  font-size: 14; 
+  font-weight: 400;
+  margin: 10px; 
+}
+
+a:hover, .active, svg:hover {
+  color: #FF8D0C;
+  text-decoration: none; 
+}
+
+.duel-title {
+  font-weight: 500;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.duel-divider {
+  border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 900px;
+  min-height: 600px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 20px;
+}
+
+.show {
+  animation: fadeIn ease 1s forwards;
+}
+
+.hide {
+  animation: fadeOut ease 0.5s forwards;
+}
+
+.wikia-page {
+  height: 70vh;
+}
+
+.modal-90w {
+  width: 90%;
+  max-width: 90%;
+}
+
+.link-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: stretch;
+  margin-top: 5px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
   }
+  100% {
+    opacity:1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+.character-title {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+}
+
+.winner-button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.refresh-button {
+  font-size: 13px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.api-table {
+  width: 100%;
+  margin-top: 20px;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.api-row {
+  margin-bottom: 3px;
+}
+
+.rankings-table {
+  opacity: 0;
+}
+
+.rankings-table-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  background-color: transparent;
+  transition: 0.5s ease-in-out background-color;
+}
+
+.row-Star {
+  background-color: rgba(240, 82, 82, 0.55);
+}
+
+.row-Harry {
+  background-color: rgba(79, 209, 79, 0.55);
+}
+
+.row-LOTR {
+  background-color: rgba(78, 78, 248, 0.55);
+}
+
+.form-check {
+  padding-top: 5px;
+}
+
+.character-image {
+  margin-top: 10px;
+  border-radius: 3px; 
+  object-fit: cover;
+  max-width: 100%; 
+  min-width: 100%;
+  height: 400px;
+  min-height: 400px;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.character-image:hover { 
+  transform: scale(1.1); 
+}
+
+
+@media (max-width: 768px) { // Bootstrap sm
+  .duel-divider {
+    border-right: 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+  }
+  .rankings {
+    flex-direction: column-reverse;
+  }
+  .rankings-table {
+    margin-top: 20px;
+  }
+  .rankings-check {
+    margin-left: 5px;
+  }
+}
