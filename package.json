@@ -1,16 +1,16 @@
 {
-  "name": "starterpack-tvergho",
+  "name": "nerdm-client",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "https://github.com/dartmouth-cs52-20S/starterpack-tvergho.git",
+  "repository": "https://github.com/tvergho/nerdom-client",
   "author": "tvergho <tvergho@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
     "test": "eslint src/**.js",
-    "build": "yarn clean; NODE_ENV=production webpack --colors",
+    "build": "(yarn clean || true) && NODE_ENV=production webpack --colors",
     "clean": "rimraf dist",
-    "deploy": "yarn build; surge -p dist -d tvergho-cs52-starter.surge.sh; yarn clean"
+    "deploy": "(yarn build || true) && (surge -p dist -d nerdom.surge.sh || true) && yarn clean"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
